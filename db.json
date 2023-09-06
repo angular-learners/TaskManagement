@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "raj",
+      "lastName": "kumar",
+      "email": "rajkumar@gmail.com",
+      "password": "ABD1234",
+      "mobileNumber": 9900990099,
+      "status": "ACTIVE",
+      "createdDate": "12-10-23",
+      "updatedDate": "12-11-23"
+    },
+    {
+      "firstName": "sai",
+      "lastName": "kumar",
+      "email": "saikumar@gmail.com",
+      "password": "ABD8098",
+      "mobileNumber": 9900990088,
+      "status": "ACTIVE",
+      "createdDate": "12-10-23",
+      "updatedDate": "12-11-23",
+      "id": 2
+    },
+    {
+      "firstName": "virat",
+      "lastName": "kholi",
+      "email": "virat@gmail.com",
+      "password": "ABC1234",
+      "mobileNumber": "909090909",
+      "id": 3
+    },
+    {
+      "firstName": "naresh",
+      "lastName": "kumar",
+      "email": "naresh@gmail.com",
+      "password": "Naresh123",
+      "mobileNumber": "9900999000",
+      "createdDate": "2023-09-06T04:22:11.442Z",
+      "updatedDate": null,
+      "status": "ACTIVE",
+      "id": 4
+    }
+  ]
+}
