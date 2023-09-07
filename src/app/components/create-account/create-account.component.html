@@ -8,7 +8,7 @@
                   {{sucessMsg}}
             </div>
             <div class="card-title mx-3">
-                 <h3>Create Account</h3>
+                 <h3> {{ selectedId===0 ? 'Create Account' :'Update Account'}}</h3>
             </div>
             <div class="card-body">
                 <div class="form-group">
@@ -33,7 +33,7 @@
                     [(ngModel)]="user.mobileNumber">
                 </div>
                 <div class="form-group mt-1">
-                    <button type="submit" class="btn btn-primary w-100">Save</button>
+                    <button type="submit" class="btn btn-primary w-100">{{ selectedId===0 ? 'Save' :'Update'}}</button>
                 </div>
                 <div class="form-group mt-1">
                     <button type="reset" class="btn btn-secondary w-100">RESET</button>

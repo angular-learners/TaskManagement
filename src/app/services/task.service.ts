@@ -24,7 +24,7 @@ export class TaskService {
 
   /** GET ALL USERS */
 
-  getAllUsers() {
+  getAllUsers():Observable<any> {
     return this.http.get(this.BASE_URL);
   }
 

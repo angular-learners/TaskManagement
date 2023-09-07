@@ -8,6 +8,7 @@ const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'login',component:LoginComponent},
   {path:'create-account',component:CreateAccountComponent},
+  {path:'update-account/:id',component:CreateAccountComponent},
   {path:'user-home',component:UserHomeComponent},
 ];
 
