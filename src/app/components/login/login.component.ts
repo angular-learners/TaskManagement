@@ -30,10 +30,11 @@ export class LoginComponent {
                     setTimeout(()=>{
                       this.router.navigate(['user-home']);
                     },5000);
-               }  else{
-                this.sucessMsg=TaskConstants.LOGIN_FAILED;
-               }  
+               } 
            })
+           if(!TaskConstants.LOGIN_SUCCESS){
+              this.sucessMsg=TaskConstants.LOGIN_FAILED;
+           }
       },
       (err:any)=>{
         console.log(err)

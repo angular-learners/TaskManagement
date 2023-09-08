@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class UserHomeComponent implements OnInit {
   usersList: User[] = [];
   filteredUser: User[] = [];
+
   constructor(private taskService: TaskService, private router: Router) {}
 
   ngOnInit(): void {
@@ -55,16 +56,25 @@ export class UserHomeComponent implements OnInit {
     });
   }
 
+  // sortUser(type: string) {
+  //   //  this.filteredUser.sort((a:any,b:any):any=>{
+  //   //    type=='ASC' ? a.firstName.localeCompare(b.firstName) :b.firstName.localeCompare(a.firstName);
+  //   //  });
+  //   this.filteredUser.sort((a: any, b: any): any => {
+  //     if (type == 'ASC') {
+  //       return a.firstName.localeCompare(b.firstName);
+  //     } else {
+  //       return b.firstName.localeCompare(a.firstName);
+  //     }
+  //   });
+  // }
+
   sortUser(type: string) {
-    //  this.filteredUser.sort((a:any,b:any):any=>{
-    //    type=='ASC' ? a.firstName.localeCompare(b.firstName) :b.firstName.localeCompare(a.firstName);
-    //  });
-    this.filteredUser.sort((a: any, b: any): any => {
-      if (type == 'ASC') {
-        return a.firstName.localeCompare(b.firstName);
-      } else {
-        return b.firstName.localeCompare(a.firstName);
-      }
+    this.filteredUser.sort((a: User, b: User) => {
+      const comparison = type === 'ASC' ? 1 : -1;
+      return comparison * a.firstName.localeCompare(b.firstName);
     });
   }
+
+
 }

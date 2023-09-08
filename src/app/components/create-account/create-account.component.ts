@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskConstants } from 'src/app/constants/task.constants';
 import { TaskStatus } from 'src/app/enums/task.staus';
 import { User } from 'src/app/models/user';
+import { TaskErrorConstants } from 'src/app/constants/task.error.constants';
 
 @Component({
   selector: 'app-create-account',
@@ -26,6 +27,10 @@ export class CreateAccountComponent implements OnInit{
 
   ngOnInit(): void {
       this.getUserById();
+  }
+
+  get taskErrorConstants(){
+    return TaskErrorConstants;
   }
 
   getUserById() {
@@ -51,8 +56,10 @@ export class CreateAccountComponent implements OnInit{
       this.user.status = TaskStatus.ACTIVE;
       this.taskService.createUserAccount(this.user).subscribe(
         (res: any) => {
-          console.log(res);
           this.sucessMsg = TaskConstants.ACCOUNT_CREATED;
+          setTimeout(()=>{
+            this.router.navigate(['login']);
+          },5000)
         },
         (err: any) => {
           console.log(err);
@@ -63,7 +70,6 @@ export class CreateAccountComponent implements OnInit{
       this.user.status = TaskStatus.ACTIVE;
       this.taskService.updateUser(this.user, this.selectedId).subscribe(
         (res: any) => {
-          console.log(res);
           this.sucessMsg = TaskConstants.ACCOUNT_UPDATED;
           setTimeout(()=>{
             this.router.navigate(['user-home']);

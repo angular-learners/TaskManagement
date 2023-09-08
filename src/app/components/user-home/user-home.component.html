@@ -6,7 +6,7 @@
          <input type="search" name="searchText"  class="form-control w-25" placeholder="serach"
            (keyup)="search($event)" >
        </div>
-        <table class="table table-striped mt-3">
+        <table class="table table-striped mt-3 shadow p-1">
             <thead >
                 <tr>
                     <th>First Name <i class="fa-solid fa-angle-up"  (click)="sortUser('ASC')"></i>
@@ -22,17 +22,20 @@
      
         <tbody>
             <tr *ngFor="let item of filteredUser">  
-                <td>{{item.firstName}}</td>
-                <td>{{item.lastName}}</td>
-                <td>{{item.email}}</td>
+                <td>{{item.firstName | uppercase}}</td>
+                <td>{{item.lastName  | customUppercase}}</td>
+                <td>{{item.email |emailPrefix }}</td>
                 <td>{{item.mobileNumber}}</td>
-                <td>{{item.status}}</td>
-                <td>{{item.createdDate}}</td>
+                <td class="text-white" [ngClass]="item.status==='ACTIVE'?'bg-success':'bg-danger'">{{item.status}}</td>
+                <td>{{item.createdDate | date:'dd-MM-YYYY'}}</td>
                 <td>
                     <button type="button" class="btn btn-success mx-3" (click)="updateUser(item.id)"><i class="fa-solid fa-lg fa-pen-to-square"></i></button>
                     <button type="button" class="btn btn-danger " (click)="deleteUser(item.id)"><i class="fa-solid fa-lg fa-trash-can"></i></button>
                 </td>
             </tr>
         </tbody>
-    </table>
+    </table>        
+      
+     
+    
 </div>
