@@ -1,7 +1,4 @@
 <div class="container">
-
-
-
     <form #createAccount="ngForm" (ngSubmit)="onSave()">
         <!-- {{createAccount.value | json}} -->
         <div class="card w-50 mt-5 ml-5">
@@ -9,7 +6,7 @@
                 {{sucessMsg}}
             </div>
             <div class="card-title mx-3">
-                <h3> {{ selectedId===0 ? 'Create Account' :'Update Account'}}</h3>
+                <h3 > {{ selectedId===0 ? 'Create Account' :'Update Account'}}</h3>
             </div>
             <div class="card-body">
                 <div class="form-group">

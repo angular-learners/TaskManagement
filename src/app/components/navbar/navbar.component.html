@@ -6,12 +6,18 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav  mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link text-white" routerLink="login">Login</a>
+                    <a class="nav-link text-white" routerLink="login" *ngIf="!authService.getLoggedIn">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" routerLink="create-account">Create Account</a>
+                    <a class="nav-link text-white" routerLink="create-account" *ngIf="!authService.getLoggedIn">Create Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="#" *ngIf="authService.getLoggedIn">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="create-account" *ngIf="authService.getLoggedIn" (click)="logout()">Logout</a>
                 </li>
             </ul>
         </div>

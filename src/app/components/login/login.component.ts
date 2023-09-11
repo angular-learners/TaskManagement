@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskConstants } from 'src/app/constants/task.constants';
 import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
  sucessMsg:string="";
  users:User[]=[];
 
- constructor(private taskService:TaskService,private router:Router){
+ constructor(private taskService:TaskService,private router:Router,private authService:AuthService){
  }
 
 
@@ -27,6 +28,8 @@ export class LoginComponent {
                const {email,password}=user;
                if(email==this.user.email  &&  password==this.user.password){
                 this.sucessMsg=TaskConstants.LOGIN_SUCCESS;
+                this.authService.setLoggedIn=true;
+                localStorage.setItem('user-loggedin',JSON.stringify(true));
                     setTimeout(()=>{
                       this.router.navigate(['user-home']);
                     },5000);

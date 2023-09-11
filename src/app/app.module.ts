@@ -12,9 +12,10 @@ import { CreateAccountComponent } from './components/create-account/create-accou
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { CustomUppercasePipe } from './pipes/custom-uppercase.pipe';
 import { EmailPrefixPipe } from './pipes/email-prefix.pipe';
+import { CustomDirective } from './directives/custom.directive';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent, LoginComponent, CreateAccountComponent, UserHomeComponent, CustomUppercasePipe, EmailPrefixPipe],
+  declarations: [AppComponent, NavbarComponent, FooterComponent, LoginComponent, CreateAccountComponent, UserHomeComponent, CustomUppercasePipe, EmailPrefixPipe, CustomDirective],
   imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
